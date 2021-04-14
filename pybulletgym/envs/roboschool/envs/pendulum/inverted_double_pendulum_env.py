@@ -10,7 +10,7 @@ class InvertedDoublePendulumBulletEnv(BaseBulletEnv):
         self.stateId = -1
 
     def create_single_player_scene(self, bullet_client):
-        return SingleRobotEmptyScene(bullet_client, gravity=9.8, timestep=0.0165, frame_skip=1)
+        return SingleRobotEmptyScene(bullet_client, gravity=9.81000, timestep=0.0165, frame_skip=1)
 
     def reset(self):
         if self.stateId >= 0:
