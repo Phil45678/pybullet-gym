@@ -14,7 +14,7 @@ if __name__ == "__main__":
     # Initializing the environment 
     pend_env = InvertedDoublePendulumBulletEnv() 
 
-    pend_env.create_single_player_scene(p)
+    #pend_env.create_single_player_scene(p)
 
     #pend_env.camera_adjust()
 
