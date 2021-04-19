@@ -7,14 +7,18 @@ class InvertedDoublePendulum(MJCFBasedRobot):
         MJCFBasedRobot.__init__(self,  'inverted_double_pendulum.xml', 'cart', action_dim=1, obs_dim=9)
 
     def robot_specific_reset(self, bullet_client):
+        print("This is called")
         self._p = bullet_client
         self.pole2 = self.parts["pole2"]
         self.slider = self.jdict["slider"]
         self.j1 = self.jdict["hinge"]
         self.j2 = self.jdict["hinge2"]
         u = self.np_random.uniform(low=-.1, high=.1, size=[2])
-        self.j1.reset_current_position(float(u[0]), 0)
-        self.j2.reset_current_position(float(u[1]), 0)
+        #self.j1.reset_current_position(float(u[0]), 0)
+        #self.j2.reset_current_position(float(u[1]), 0)
+        print("Setting initial state deterministically")
+        self.j1.reset_current_position(0, 0)
+        self.j2.reset_current_position(0, 0)
         self.j1.set_motor_torque(0)
         self.j2.set_motor_torque(0)
 
